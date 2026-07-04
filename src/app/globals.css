@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  /* Font Families */
+  --font-sans: var(--font-albert-sans), var(--font-geist-sans), Inter, sans-serif;
+  --font-mono: var(--font-fragment-mono), var(--font-geist-mono), monospace;
+
+  /* Color System (Light mode) */
+  --bg-canvas: #f4f2ee;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fafafa;
+  --bg-header: rgba(244, 242, 238, 0.75);
+  
+  --text-primary: #1a1a1a;
+  --text-secondary: #605f5f;
+  --text-muted: #999999;
+  
+  --border-default: #ede9e6;
+  --border-muted: #e6e6e6;
+  
+  --accent-yellow: #fef7af;
+  --accent-orange: #fecd1a;
+  --accent-cyan: #84e6f6;
+  --accent-pink: #f7a49e;
+  --accent-red: #e83043;
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --color-bg-canvas: var(--bg-canvas);
+  --color-bg-card: var(--bg-card);
+  --color-bg-card-hover: var(--bg-card-hover);
+  --color-bg-header: var(--bg-header);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  
+  --color-border-default: var(--border-default);
+  --color-border-muted: var(--border-muted);
+  
+  --color-accent-yellow: var(--accent-yellow);
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-red: var(--accent-red);
+}
+
+/* Custom Base Styles */
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Grid background utility */
+.grid-bg-overlay {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, var(--border-default) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-default) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
