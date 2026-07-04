@@ -60,7 +60,7 @@ export default function Header() {
           <Link href="/" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
             Home
           </Link>
-          <Link href="#about" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
+          <Link href="/about" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
             About
           </Link>
           <Link href="#features" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
@@ -108,7 +108,7 @@ export default function Header() {
               Home
             </Link>
             <Link 
-              href="#about" 
+              href="/about" 
               onClick={() => setIsOpen(false)}
               className="text-base font-semibold text-text-secondary hover:text-text-primary transition-colors py-2 border-b border-border-muted"
             >
