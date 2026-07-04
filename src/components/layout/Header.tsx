@@ -17,7 +17,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed left-0 right-0 z-50 mx-auto max-w-5xl transition-all duration-300 ${
+    <header className={`fixed left-0 right-0 z-50 mx-auto max-w-3xl transition-all duration-300 ${
       isScrolled ? "top-6 px-4" : "top-0 px-6"
     }`}>
       <div className={`flex items-center justify-between transition-all duration-300 ${
