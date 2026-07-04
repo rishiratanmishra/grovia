@@ -63,10 +63,10 @@ export default function Header() {
           <Link href="/about" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
             About
           </Link>
-          <Link href="#features" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
+          <Link href="/features" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
             Features
           </Link>
-          <Link href="#pricing" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
+          <Link href="/pricing" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
             Pricing
           </Link>
         </nav>
@@ -75,7 +75,7 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-4">
           {/* Contact Button */}
           <Link
-            href="#contact"
+            href="/contact"
             className="group flex h-11 items-center justify-center gap-2.5 rounded-full bg-text-primary px-6 text-[15px] font-semibold text-bg-canvas hover:opacity-90 transition-all shadow-sm"
           >
             Contact us
@@ -115,14 +115,14 @@ export default function Header() {
               About
             </Link>
             <Link 
-              href="#features" 
+              href="/features" 
               onClick={() => setIsOpen(false)}
               className="text-base font-semibold text-text-secondary hover:text-text-primary transition-colors py-2 border-b border-border-muted"
             >
               Features
             </Link>
             <Link 
-              href="#pricing" 
+              href="/pricing" 
               onClick={() => setIsOpen(false)}
               className="text-base font-semibold text-text-secondary hover:text-text-primary transition-colors py-2 border-b border-border-muted"
             >
@@ -130,7 +130,7 @@ export default function Header() {
             </Link>
             
             <Link
-              href="#contact"
+              href="/contact"
               onClick={() => setIsOpen(false)}
               className="mt-2 w-full flex h-12 items-center justify-center gap-2 rounded-full bg-text-primary text-bg-canvas font-bold shadow-md hover:opacity-90 transition-opacity"
             >
