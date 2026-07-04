@@ -27,11 +27,32 @@ export default function Header() {
           : "bg-transparent border-transparent px-0 py-8"
       }`}>
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-text-primary text-bg-canvas transition-colors duration-300">
-            <HardHat className="h-5 w-5" />
-          </div>
-          <span className="text-xl font-bold tracking-tight text-text-primary">Blurick</span>
+        <Link 
+          href="/" 
+          className={`relative flex items-center h-9 transition-all duration-500 ease-in-out ${
+            isScrolled ? "w-9" : "w-36"
+          }`}
+        >
+          {/* Full Logo (Visible initially) */}
+          <img 
+            src="/full-logo.svg" 
+            alt="Blurick Logo" 
+            className={`absolute left-0 top-0 h-9 w-auto object-contain transition-all duration-500 ease-in-out origin-left ${
+              isScrolled 
+                ? "opacity-0 scale-90 -translate-x-4 pointer-events-none" 
+                : "opacity-100 scale-100 translate-x-0"
+            }`} 
+          />
+          {/* App Logo Icon (Visible when scrolled) */}
+          <img 
+            src="/app-logo.svg" 
+            alt="Blurick Logo" 
+            className={`absolute left-0 top-0 h-9 w-9 object-contain rounded-xl transition-all duration-500 ease-in-out origin-left ${
+              isScrolled 
+                ? "opacity-100 scale-100 translate-x-0" 
+                : "opacity-0 scale-90 translate-x-4 pointer-events-none"
+            }`} 
+          />
         </Link>
 
         {/* Desktop Nav Links */}
