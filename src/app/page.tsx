@@ -4,6 +4,9 @@ import React from "react";
 import Header from "@/components/layout/Header";
 import Hero from "@/components/pages/home/Hero";
 import Features from "@/components/pages/home/features/Features";
+import Sandbox from "@/components/pages/home/sandbox/Sandbox";
+import Pricing from "@/components/pages/home/Pricing";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -17,21 +20,14 @@ export default function Home() {
         <Hero />
         
         <Features />
+        
+        <Sandbox />
 
-        <section id="sandbox" className="py-20 border-t border-border-default/60 relative">
-          <div className="mx-auto max-w-5xl px-6 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-text-primary mb-4">Interactive Sandbox</h2>
-            <p className="text-text-secondary">Coming soon in the next step...</p>
-          </div>
-        </section>
-
-        <section id="pricing" className="py-20 border-t border-border-default/60 relative">
-          <div className="mx-auto max-w-5xl px-6 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-text-primary mb-4">Pricing Section</h2>
-            <p className="text-text-secondary">Coming soon in the next step...</p>
-          </div>
-        </section>
+        <Pricing />
       </main>
+
+      {/* Site-wide Footer */}
+      <Footer />
     </div>
   );
 }
