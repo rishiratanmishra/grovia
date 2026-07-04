@@ -38,9 +38,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${albertSans.variable} ${fragmentMono.variable} scroll-smooth antialiased`}>
-      <body className="bg-bg-canvas text-text-primary font-sans min-h-screen flex flex-col selection:bg-accent-yellow selection:text-black">
+      <body className="bg-bg-canvas text-text-primary font-sans min-h-screen flex flex-col selection:bg-accent-yellow selection:text-black relative">
         <SmoothScroll>
-          {children}
+          {/* Repeating background vertical stripes */}
+          <div 
+            className="pointer-events-none absolute inset-0 z-0 bg-repeat bg-left-top opacity-[0.025]" 
+            style={{
+              backgroundImage: "url('/vertical-stripes.png')",
+              backgroundSize: "128px auto",
+            }}
+          />
+          {/* Content Wrapper */}
+          <div className="relative z-10 flex-1 flex flex-col">
+            {children}
+          </div>
         </SmoothScroll>
       </body>
     </html>

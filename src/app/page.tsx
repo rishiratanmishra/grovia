@@ -6,7 +6,7 @@ import Hero from "@/components/pages/home/Hero";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-bg-canvas text-text-primary selection:bg-accent-yellow selection:text-black">
+    <div className="relative min-h-screen bg-transparent text-text-primary selection:bg-accent-yellow selection:text-black">
       {/* Premium Navigation Header */}
       <Header />
 

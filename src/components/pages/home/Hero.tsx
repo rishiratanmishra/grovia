@@ -6,19 +6,18 @@ import { ArrowUpRight, Check, HardHat, TrendingUp, AlertTriangle, Play, Sparkles
 
 export function VerticalGridLines() {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none mx-auto max-w-5xl px-4 h-full flex justify-between">
-      <div className="w-[1px] h-full bg-border-default/60"></div>
-      <div className="w-[1px] h-full bg-border-default/60 hidden sm:block"></div>
-      <div className="w-[1px] h-full bg-border-default/60 hidden md:block"></div>
-      <div className="w-[1px] h-full bg-border-default/60 hidden lg:block"></div>
-      <div className="w-[1px] h-full bg-border-default/60"></div>
+    <div className="absolute inset-0 z-0 pointer-events-none h-full w-full">
+      {/* Dynamic responsive grid lines */}
+      <div className="absolute inset-0 responsive-grid-lines" />
+      {/* Left to right gradient shadow/fade overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#f4f2ee]/90 via-[#f4f2ee]/0 to-[#f4f2ee]/90 pointer-events-none" />
     </div>
   );
 }
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-36 pb-20 bg-bg-canvas min-h-screen flex flex-col justify-between">
+    <section className="relative overflow-hidden pt-36 pb-20 bg-transparent min-h-screen flex flex-col justify-between">
       {/* Vertical background grid lines to match Grovia's look */}
       <VerticalGridLines />
 

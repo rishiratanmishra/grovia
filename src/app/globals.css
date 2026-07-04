@@ -48,7 +48,6 @@
   --color-accent-red: var(--accent-red);
 }
 
-/* Custom Base Styles */
 body {
   background-color: var(--bg-canvas);
   color: var(--text-primary);
@@ -79,6 +78,12 @@ body {
     linear-gradient(to right, var(--border-default) 1px, transparent 1px),
     linear-gradient(to bottom, var(--border-default) 1px, transparent 1px);
   mask-image: radial-gradient(circle at center, black, transparent 80%);
+}
+
+/* Responsive vertical grid lines */
+.responsive-grid-lines {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 64px 100%;
 }
 
 /* Marquee animation */
