@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Albert_Sans, Fragment_Mono } from "next/font/google";
+import SmoothScroll from "@/components/layout/SmoothScroll";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -38,7 +39,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${albertSans.variable} ${fragmentMono.variable} scroll-smooth antialiased`}>
       <body className="bg-bg-canvas text-text-primary font-sans min-h-screen flex flex-col selection:bg-accent-yellow selection:text-black">
-        {children}
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

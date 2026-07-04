@@ -1,36 +1,51 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Menu, X, HardHat } from "lucide-react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-6 left-0 right-0 z-50 mx-auto max-w-5xl px-4">
-      <div className="flex items-center justify-between bg-bg-header backdrop-blur-lg border border-border-default rounded-full px-6 py-3 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300">
+    <header className={`fixed left-0 right-0 z-50 mx-auto max-w-5xl transition-all duration-300 ${
+      isScrolled ? "top-6 px-4" : "top-0 px-6"
+    }`}>
+      <div className={`flex items-center justify-between transition-all duration-300 ${
+        isScrolled 
+          ? "bg-bg-header backdrop-blur-lg border border-border-default rounded-full px-8 py-4 shadow-[0_8px_30px_rgb(0,0,0,0.04)]" 
+          : "bg-transparent border-transparent px-0 py-8"
+      }`}>
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-text-primary text-bg-canvas transition-colors duration-300">
-            <HardHat className="h-4 w-4" />
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-text-primary text-bg-canvas transition-colors duration-300">
+            <HardHat className="h-5 w-5" />
           </div>
-          <span className="text-lg font-bold tracking-tight text-text-primary">Blurick</span>
+          <span className="text-xl font-bold tracking-tight text-text-primary">Blurick</span>
         </Link>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center gap-8">
-          <Link href="#features" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">
+        <nav className="hidden md:flex items-center gap-9">
+          <Link href="#features" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
             Features
           </Link>
-          <Link href="#sandbox" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1.5">
+          <Link href="#sandbox" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1.5">
             Sandbox
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
           </Link>
-          <Link href="#pricing" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">
+          <Link href="#pricing" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
             Pricing
           </Link>
-          <Link href="#calculator" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">
+          <Link href="#calculator" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
             ROI Calculator
           </Link>
         </nav>
@@ -40,11 +55,11 @@ export default function Header() {
           {/* Contact Button */}
           <Link
             href="#contact"
-            className="group flex h-10 items-center justify-center gap-2 rounded-full bg-text-primary px-5 text-sm font-semibold text-bg-canvas hover:opacity-90 transition-all shadow-sm"
+            className="group flex h-11 items-center justify-center gap-2.5 rounded-full bg-text-primary px-6 text-[15px] font-semibold text-bg-canvas hover:opacity-90 transition-all shadow-sm"
           >
             Contact us
             <div className="flex h-5 w-5 items-center justify-center rounded-full bg-bg-canvas text-text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200">
-              <ArrowUpRight className="h-3 w-3" />
+              <ArrowUpRight className="h-3.5 w-3.5" />
             </div>
           </Link>
         </div>
@@ -53,9 +68,9 @@ export default function Header() {
         <div className="flex md:hidden items-center gap-3">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-full border border-border-default text-text-primary hover:bg-bg-card transition-colors"
+            className="p-2.5 rounded-full border border-border-default text-text-primary hover:bg-bg-card transition-colors"
           >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isOpen ? <X className="h-5.5 w-5.5" /> : <Menu className="h-5.5 w-5.5" />}
           </button>
         </div>
       </div>
