@@ -12,6 +12,7 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+    handleScroll(); // Check initial scroll position on mount
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -35,18 +36,17 @@ export default function Header() {
 
         {/* Desktop Nav Links */}
         <nav className="hidden md:flex items-center gap-9">
+          <Link href="/" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
+            Home
+          </Link>
+          <Link href="#about" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
+            About
+          </Link>
           <Link href="#features" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
             Features
           </Link>
-          <Link href="#sandbox" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1.5">
-            Sandbox
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          </Link>
           <Link href="#pricing" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
             Pricing
-          </Link>
-          <Link href="#calculator" className="text-[15px] font-medium text-text-secondary hover:text-text-primary transition-colors">
-            ROI Calculator
           </Link>
         </nav>
 
@@ -80,6 +80,20 @@ export default function Header() {
         <div className="mt-2 md:hidden w-full bg-bg-card border border-border-default rounded-3xl p-6 shadow-xl animate-in fade-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col gap-4">
             <Link 
+              href="/" 
+              onClick={() => setIsOpen(false)}
+              className="text-base font-semibold text-text-secondary hover:text-text-primary transition-colors py-2 border-b border-border-muted"
+            >
+              Home
+            </Link>
+            <Link 
+              href="#about" 
+              onClick={() => setIsOpen(false)}
+              className="text-base font-semibold text-text-secondary hover:text-text-primary transition-colors py-2 border-b border-border-muted"
+            >
+              About
+            </Link>
+            <Link 
               href="#features" 
               onClick={() => setIsOpen(false)}
               className="text-base font-semibold text-text-secondary hover:text-text-primary transition-colors py-2 border-b border-border-muted"
@@ -87,26 +101,11 @@ export default function Header() {
               Features
             </Link>
             <Link 
-              href="#sandbox" 
-              onClick={() => setIsOpen(false)}
-              className="text-base font-semibold text-text-secondary hover:text-text-primary transition-colors py-2 border-b border-border-muted flex items-center justify-between"
-            >
-              <span>Sandbox Demo</span>
-              <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
-            </Link>
-            <Link 
               href="#pricing" 
               onClick={() => setIsOpen(false)}
               className="text-base font-semibold text-text-secondary hover:text-text-primary transition-colors py-2 border-b border-border-muted"
             >
               Pricing
-            </Link>
-            <Link 
-              href="#calculator" 
-              onClick={() => setIsOpen(false)}
-              className="text-base font-semibold text-text-secondary hover:text-text-primary transition-colors py-2 border-b border-border-muted"
-            >
-              ROI Calculator
             </Link>
             
             <Link

@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowUpRight, Check, HardHat, TrendingUp, AlertTriangle, Play } from "lucide-react";
+import PartnerMarquee from "./PartnerMarquee";
 
 export function VerticalGridLines() {
   return (
@@ -184,27 +185,7 @@ export default function Hero() {
       </div>
 
       {/* Partners / Social Proof Logo Marquee Ticker */}
-      <div className="relative z-10 w-full border-y border-border-default/60 bg-bg-card/50 backdrop-blur-sm py-6 overflow-hidden">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="flex overflow-hidden select-none gap-12 mask-marquee">
-            <div className="animate-marquee flex items-center gap-16 min-w-full justify-around">
-              <span className="text-sm font-extrabold tracking-wider text-text-muted hover:text-text-primary transition-colors cursor-pointer">L&T CONSTRUCTION</span>
-              <span className="text-sm font-extrabold tracking-wider text-text-muted hover:text-text-primary transition-colors cursor-pointer">TATA PROJECTS</span>
-              <span className="text-sm font-extrabold tracking-wider text-text-muted hover:text-text-primary transition-colors cursor-pointer">SHAPOORJI PALLONJI</span>
-              <span className="text-sm font-extrabold tracking-wider text-text-muted hover:text-text-primary transition-colors cursor-pointer">DLF HOMES</span>
-              <span className="text-sm font-extrabold tracking-wider text-text-muted hover:text-text-primary transition-colors cursor-pointer">JMC PROJECTS</span>
-            </div>
-            {/* Duplicate for seamless scrolling */}
-            <div className="animate-marquee flex items-center gap-16 min-w-full justify-around" aria-hidden="true">
-              <span className="text-sm font-extrabold tracking-wider text-text-muted hover:text-text-primary transition-colors cursor-pointer">L&T CONSTRUCTION</span>
-              <span className="text-sm font-extrabold tracking-wider text-text-muted hover:text-text-primary transition-colors cursor-pointer">TATA PROJECTS</span>
-              <span className="text-sm font-extrabold tracking-wider text-text-muted hover:text-text-primary transition-colors cursor-pointer">SHAPOORJI PALLONJI</span>
-              <span className="text-sm font-extrabold tracking-wider text-text-muted hover:text-text-primary transition-colors cursor-pointer">DLF HOMES</span>
-              <span className="text-sm font-extrabold tracking-wider text-text-muted hover:text-text-primary transition-colors cursor-pointer">JMC PROJECTS</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <PartnerMarquee />
     </section>
   );
 }
