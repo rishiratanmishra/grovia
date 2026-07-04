@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Check, HardHat, TrendingUp, AlertTriangle, Play, Sparkles } from "lucide-react";
+import { ArrowUpRight, Check, HardHat, TrendingUp, AlertTriangle, Play } from "lucide-react";
 
 export function VerticalGridLines() {
   return (
@@ -29,20 +29,13 @@ export default function Hero() {
       {/* Grovia-style vertical column lines */}
       <VerticalGridLines />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 w-full flex-1 flex flex-col justify-center">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-12">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 w-full flex-1 flex flex-col justify-start pt-6 sm:pt-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center pt-4 pb-12">
 
           {/* Left Column: Text & Content */}
           <div className="lg:col-span-6 space-y-8 text-left">
-            {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-card px-4 py-1.5 text-xs font-medium text-text-primary shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-              <Sparkles className="h-3 w-3 text-accent-orange animate-pulse" />
-              <span>Next-gen site management operating system</span>
-            </div>
-
-            {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-text-primary leading-[1.08] font-sans">
-              The construction OS built for <span className="bg-gradient-to-r from-text-primary via-text-secondary to-text-muted bg-clip-text text-transparent">modern builders</span>
+              Control site chaos. Protect your <span className="bg-gradient-to-r from-text-primary via-text-secondary to-text-muted bg-clip-text text-transparent">project margins</span>
             </h1>
 
             {/* Sub-headline */}
@@ -92,98 +85,100 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Visual Graphics (Cards) */}
-          <div className="lg:col-span-6 relative flex flex-col sm:flex-row gap-6 justify-center lg:justify-end items-center">
+          <div className="lg:col-span-6 relative flex justify-center lg:justify-end items-center py-12 lg:pr-16">
+            <div className="relative w-full max-w-[360px]">
 
-            {/* Card 1: Active Indents / Material logs */}
-            <div className="w-full sm:w-[260px] bg-bg-card border border-border-default rounded-3xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.03)] transform sm:-rotate-2 hover:rotate-0 transition-all duration-300">
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-2xs font-bold uppercase tracking-wider text-text-muted">Material Requests</span>
-                <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              {/* Card 1: Active Indents / Material logs */}
+              <div className="w-full bg-bg-card border border-border-default rounded-3xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.03)] transform sm:-rotate-2 hover:rotate-0 hover:z-30 transition-all duration-300 relative z-10">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-2xs font-bold uppercase tracking-wider text-text-muted">Material Requests</span>
+                  <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                </div>
+                <h3 className="text-sm font-bold text-text-primary mb-3">Grand Plaza Indents</h3>
+
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between p-2.5 rounded-2xl bg-bg-canvas/50 border border-border-default/40">
+                    <div className="flex items-center gap-2.5">
+                      <div className="flex h-7 w-7 items-center justify-center rounded-xl bg-accent-orange/20 text-accent-orange">
+                        <HardHat className="h-3.5 w-3.5" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-text-primary">OPC Cement</div>
+                        <div className="text-4xs text-text-secondary">450 Bags • Approved</div>
+                      </div>
+                    </div>
+                    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600">
+                      <Check className="h-3 w-3" />
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between p-2.5 rounded-2xl bg-bg-canvas/50 border border-border-default/40">
+                    <div className="flex items-center gap-2.5">
+                      <div className="flex h-7 w-7 items-center justify-center rounded-xl bg-accent-cyan/20 text-accent-cyan">
+                        <HardHat className="h-3.5 w-3.5" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-text-primary">12mm TMT Steel</div>
+                        <div className="text-4xs text-text-secondary">8 Tons • Pending</div>
+                      </div>
+                    </div>
+                    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-accent-orange/10 text-accent-orange">
+                      <TrendingUp className="h-3 w-3" />
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between p-2.5 rounded-2xl bg-bg-canvas/50 border border-border-default/40">
+                    <div className="flex items-center gap-2.5">
+                      <div className="flex h-7 w-7 items-center justify-center rounded-xl bg-accent-pink/20 text-accent-pink">
+                        <HardHat className="h-3.5 w-3.5" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-text-primary">Fine Sand</div>
+                        <div className="text-4xs text-text-secondary">3 Brass • Blocked</div>
+                      </div>
+                    </div>
+                    <div className="flex h-5 w-5 items-center justify-center rounded-full bg-accent-red/10 text-accent-red">
+                      <AlertTriangle className="h-3 w-3" />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-sm font-bold text-text-primary mb-3">Grand Plaza Indents</h3>
 
-              <div className="space-y-3">
-                <div className="flex items-center justify-between p-2.5 rounded-2xl bg-bg-canvas/50 border border-border-default/40">
-                  <div className="flex items-center gap-2.5">
-                    <div className="flex h-7 w-7 items-center justify-center rounded-xl bg-accent-orange/20 text-accent-orange">
-                      <HardHat className="h-3.5 w-3.5" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-text-primary">OPC Cement</div>
-                      <div className="text-4xs text-text-secondary">450 Bags • Approved</div>
-                    </div>
-                  </div>
-                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600">
-                    <Check className="h-3 w-3" />
-                  </div>
+              {/* Card 2: Analytics & Daily average output */}
+              <div className="w-full sm:w-[230px] bg-bg-card border border-border-default rounded-3xl p-5 shadow-[0_25px_60px_rgba(0,0,0,0.08)] sm:absolute sm:-bottom-10 sm:-right-16 z-20 transform sm:rotate-3 hover:rotate-0 hover:z-30 transition-all duration-300 mt-6 sm:mt-0">
+                <div className="flex justify-between items-center mb-4">
+                  <span className="text-2xs font-bold uppercase tracking-wider text-text-muted">Labor Muster</span>
+                  <span className="text-xs font-bold text-emerald-500">+12%</span>
                 </div>
+                <h3 className="text-sm font-bold text-text-primary mb-1">Muster Roll Rate</h3>
+                <p className="text-2xl font-extrabold text-text-primary mb-4">92.4%</p>
 
-                <div className="flex items-center justify-between p-2.5 rounded-2xl bg-bg-canvas/50 border border-border-default/40">
-                  <div className="flex items-center gap-2.5">
-                    <div className="flex h-7 w-7 items-center justify-center rounded-xl bg-accent-cyan/20 text-accent-cyan">
-                      <HardHat className="h-3.5 w-3.5" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-text-primary">12mm TMT Steel</div>
-                      <div className="text-4xs text-text-secondary">8 Tons • Pending</div>
-                    </div>
+                {/* Pure CSS Bar Chart */}
+                <div className="flex items-end justify-between gap-2.5 h-20 pt-2">
+                  <div className="flex-1 flex flex-col items-center gap-1.5">
+                    <div className="w-full rounded-t-md bg-accent-cyan/80 h-10 hover:bg-accent-cyan transition-all"></div>
+                    <span className="text-[10px] font-bold text-text-secondary">M</span>
                   </div>
-                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-accent-orange/10 text-accent-orange">
-                    <TrendingUp className="h-3 w-3" />
+                  <div className="flex-1 flex flex-col items-center gap-1.5">
+                    <div className="w-full rounded-t-md bg-accent-orange/80 h-14 hover:bg-accent-orange transition-all"></div>
+                    <span className="text-[10px] font-bold text-text-secondary">T</span>
                   </div>
-                </div>
-
-                <div className="flex items-center justify-between p-2.5 rounded-2xl bg-bg-canvas/50 border border-border-default/40">
-                  <div className="flex items-center gap-2.5">
-                    <div className="flex h-7 w-7 items-center justify-center rounded-xl bg-accent-pink/20 text-accent-pink">
-                      <HardHat className="h-3.5 w-3.5" />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-text-primary">Fine Sand</div>
-                      <div className="text-4xs text-text-secondary">3 Brass • Blocked</div>
-                    </div>
+                  <div className="flex-1 flex flex-col items-center gap-1.5">
+                    <div className="w-full rounded-t-md bg-accent-pink/80 h-8 hover:bg-accent-pink transition-all"></div>
+                    <span className="text-[10px] font-bold text-text-secondary">W</span>
                   </div>
-                  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-accent-red/10 text-accent-red">
-                    <AlertTriangle className="h-3 w-3" />
+                  <div className="flex-1 flex flex-col items-center gap-1.5">
+                    <div className="w-full rounded-t-md bg-accent-yellow/80 h-16 hover:bg-accent-yellow transition-all"></div>
+                    <span className="text-[10px] font-bold text-text-secondary">T</span>
+                  </div>
+                  <div className="flex-1 flex flex-col items-center gap-1.5">
+                    <div className="w-full rounded-t-md bg-text-primary/70 h-12 hover:bg-text-primary transition-all"></div>
+                    <span className="text-[10px] font-bold text-text-secondary">F</span>
                   </div>
                 </div>
               </div>
+
             </div>
-
-            {/* Card 2: Analytics & Daily average output */}
-            <div className="w-full sm:w-[240px] bg-bg-card border border-border-default rounded-3xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.03)] sm:translate-y-8 transform sm:rotate-3 hover:rotate-0 transition-all duration-300">
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-2xs font-bold uppercase tracking-wider text-text-muted">Labor Muster</span>
-                <span className="text-xs font-bold text-emerald-500">+12%</span>
-              </div>
-              <h3 className="text-sm font-bold text-text-primary mb-1">Muster Roll Rate</h3>
-              <p className="text-2xl font-extrabold text-text-primary mb-4">92.4%</p>
-
-              {/* Pure CSS Bar Chart */}
-              <div className="flex items-end justify-between gap-2.5 h-20 pt-2">
-                <div className="flex-1 flex flex-col items-center gap-1.5">
-                  <div className="w-full rounded-t-md bg-accent-cyan/80 h-10 hover:bg-accent-cyan transition-all"></div>
-                  <span className="text-[10px] font-bold text-text-secondary">M</span>
-                </div>
-                <div className="flex-1 flex flex-col items-center gap-1.5">
-                  <div className="w-full rounded-t-md bg-accent-orange/80 h-14 hover:bg-accent-orange transition-all"></div>
-                  <span className="text-[10px] font-bold text-text-secondary">T</span>
-                </div>
-                <div className="flex-1 flex flex-col items-center gap-1.5">
-                  <div className="w-full rounded-t-md bg-accent-pink/80 h-8 hover:bg-accent-pink transition-all"></div>
-                  <span className="text-[10px] font-bold text-text-secondary">W</span>
-                </div>
-                <div className="flex-1 flex flex-col items-center gap-1.5">
-                  <div className="w-full rounded-t-md bg-accent-yellow/80 h-16 hover:bg-accent-yellow transition-all"></div>
-                  <span className="text-[10px] font-bold text-text-secondary">T</span>
-                </div>
-                <div className="flex-1 flex flex-col items-center gap-1.5">
-                  <div className="w-full rounded-t-md bg-text-primary/70 h-12 hover:bg-text-primary transition-all"></div>
-                  <span className="text-[10px] font-bold text-text-secondary">F</span>
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
