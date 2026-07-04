@@ -6,11 +6,19 @@ import { ArrowUpRight, Check, HardHat, TrendingUp, AlertTriangle, Play, Sparkles
 
 export function VerticalGridLines() {
   return (
-    <div className="absolute inset-0 z-0 pointer-events-none h-full w-full">
-      {/* Dynamic responsive grid lines */}
-      <div className="absolute inset-0 responsive-grid-lines" />
-      {/* Left to right gradient shadow/fade overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#f4f2ee]/90 via-[#f4f2ee]/0 to-[#f4f2ee]/90 pointer-events-none" />
+    <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      {/* Raised panel column lines — left 36% + right 36%, center clear */}
+      <div className="vertical-col-lines absolute inset-0">
+        <div className="lines-left">
+          {[...Array(7)].map((_, i) => <div key={i} className="col-divider" />)}
+        </div>
+        <div className="lines-center" />
+        <div className="lines-right">
+          {[...Array(7)].map((_, i) => <div key={i} className="col-divider" />)}
+        </div>
+      </div>
+      {/* Bottom fade — smooth transition into page content */}
+      <div className="absolute bottom-0 left-0 right-0 h-[30%] bg-gradient-to-b from-transparent to-[#f4f2ee] pointer-events-none" />
     </div>
   );
 }
@@ -18,15 +26,12 @@ export function VerticalGridLines() {
 export default function Hero() {
   return (
     <section className="relative overflow-hidden pt-36 pb-20 bg-transparent min-h-screen flex flex-col justify-between">
-      {/* Vertical background grid lines to match Grovia's look */}
+      {/* Grovia-style vertical column lines */}
       <VerticalGridLines />
-
-      {/* Grid overlay for texture */}
-      <div className="absolute inset-0 z-0 opacity-30 grid-bg-overlay pointer-events-none"></div>
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 w-full flex-1 flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center py-12">
-          
+
           {/* Left Column: Text & Content */}
           <div className="lg:col-span-6 space-y-8 text-left">
             {/* Tagline Badge */}
@@ -88,7 +93,7 @@ export default function Hero() {
 
           {/* Right Column: Visual Graphics (Cards) */}
           <div className="lg:col-span-6 relative flex flex-col sm:flex-row gap-6 justify-center lg:justify-end items-center">
-            
+
             {/* Card 1: Active Indents / Material logs */}
             <div className="w-full sm:w-[260px] bg-bg-card border border-border-default rounded-3xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.03)] transform sm:-rotate-2 hover:rotate-0 transition-all duration-300">
               <div className="flex justify-between items-center mb-4">
@@ -96,7 +101,7 @@ export default function Hero() {
                 <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
               </div>
               <h3 className="text-sm font-bold text-text-primary mb-3">Grand Plaza Indents</h3>
-              
+
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-2.5 rounded-2xl bg-bg-canvas/50 border border-border-default/40">
                   <div className="flex items-center gap-2.5">

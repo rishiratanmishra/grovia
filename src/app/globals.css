@@ -10,14 +10,14 @@
   --bg-card: #ffffff;
   --bg-card-hover: #fafafa;
   --bg-header: rgba(244, 242, 238, 0.75);
-  
+
   --text-primary: #1a1a1a;
   --text-secondary: #605f5f;
   --text-muted: #999999;
-  
+
   --border-default: #ede9e6;
   --border-muted: #e6e6e6;
-  
+
   --accent-yellow: #fef7af;
   --accent-orange: #fecd1a;
   --accent-cyan: #84e6f6;
@@ -33,14 +33,14 @@
   --color-bg-card: var(--bg-card);
   --color-bg-card-hover: var(--bg-card-hover);
   --color-bg-header: var(--bg-header);
-  
+
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-muted: var(--text-muted);
-  
+
   --color-border-default: var(--border-default);
   --color-border-muted: var(--border-muted);
-  
+
   --color-accent-yellow: var(--accent-yellow);
   --color-accent-orange: var(--accent-orange);
   --color-accent-cyan: var(--accent-cyan);
@@ -60,36 +60,80 @@ body {
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-canvas);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--border-default);
   border-radius: 9999px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
 
-/* Grid background utility */
-.grid-bg-overlay {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, var(--border-default) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--border-default) 1px, transparent 1px);
-  mask-image: radial-gradient(circle at center, black, transparent 80%);
+
+.vertical-col-lines {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 92%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 92%);
 }
 
-/* Responsive vertical grid lines */
-.responsive-grid-lines {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
-  background-size: 64px 100%;
+.vertical-col-lines .lines-left {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 36%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%);
+  mask-image: linear-gradient(to right, transparent 0%, black 30%);
 }
+
+.vertical-col-lines .lines-right {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 36%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, black 30%);
+  mask-image: linear-gradient(to left, transparent 0%, black 30%);
+}
+
+
+.vertical-col-lines .col-divider {
+  flex: 1 0 0;
+  min-width: 48px;
+  max-width: 68px;
+  height: 100%;
+  opacity: 0.5;
+  background: linear-gradient(to right,
+      rgba(0, 0, 0, 0.03) 10%,
+      rgba(255, 255, 255, 0.1) 12%,
+      rgba(255, 255, 255, 0.11) 10%,
+      rgba(0, 0, 0, 0.025) 90%,
+      rgba(0, 0, 0, 0.03) 10%);
+}
+
+.vertical-col-lines .lines-center {
+  flex: 1;
+}
+
 
 /* Marquee animation */
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
