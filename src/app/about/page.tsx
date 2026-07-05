@@ -1,7 +1,5 @@
 import React from "react";
 import { Metadata } from "next";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import AboutHero from "@/components/pages/about/hero/AboutHero";
 import AboutStory from "@/components/pages/about/story/AboutStory";
 import AboutValues from "@/components/pages/about/values/AboutValues";
@@ -25,20 +23,11 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="relative min-h-screen bg-bg-canvas text-text-primary selection:bg-accent-yellow selection:text-black">
-      {/* Navigation Header */}
-      <Header />
-
-      {/* Main Sections */}
-      <main className="pt-20">
-        <AboutHero />
-        <AboutStory />
-        <AboutValues />
-        <AboutTeam />
-      </main>
-
-      {/* Footer */}
-      <Footer />
-    </div>
+    <main>
+      <AboutHero />
+      <AboutStory />
+      <AboutValues />
+      <AboutTeam />
+    </main>
   );
 }

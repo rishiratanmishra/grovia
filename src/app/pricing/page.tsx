@@ -1,7 +1,5 @@
 import React from "react";
 import { Metadata } from "next";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import PricingHero from "@/components/pages/pricing/hero/PricingHero";
 import PricingPlans from "@/components/pages/pricing/plans/PricingPlans";
 import PricingFaq from "@/components/pages/pricing/faq/PricingFaq";
@@ -19,19 +17,10 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <div className="relative min-h-screen bg-bg-canvas text-text-primary selection:bg-accent-yellow selection:text-black">
-      {/* Navigation Header */}
-      <Header />
-
-      {/* Main Sections */}
-      <main>
-        <PricingHero />
-        <PricingPlans />
-        <PricingFaq />
-      </main>
-
-      {/* Footer */}
-      <Footer />
-    </div>
+    <main>
+      <PricingHero />
+      <PricingPlans />
+      <PricingFaq />
+    </main>
   );
 }
